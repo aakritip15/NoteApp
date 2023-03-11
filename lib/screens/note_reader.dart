@@ -20,7 +20,7 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
         elevation: 0.0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,6 +34,7 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
             Text(
               widget.doc["creation_date"],
               style: AppStyle.DateTitle,
+              textAlign: TextAlign.right,
             ),
             SizedBox(
               height: 35.0,
