@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:note/styles/app_style.dart';
 import 'package:note/widgets/note_card.dart';
+import 'package:note/screens/note_reader.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -53,7 +54,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2),
                         children: snapshot.data!.docs
-                            .map((note) => noteCard(() {}, note))
+                            .map((note) => noteCard(() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              NoteReaderScreen(note)));
+                                }, note))
                             .toList());
                   }
 
