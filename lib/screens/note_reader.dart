@@ -20,33 +20,34 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
         elevation: 0.0,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              widget.doc["note_title"],
-              style: AppStyle.mainTitle,
+          padding: const EdgeInsets.all(16.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.doc["note_title"],
+                  style: AppStyle.mainTitle,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  widget.doc["creation_date"],
+                  style: AppStyle.DateTitle,
+                  textAlign: TextAlign.right,
+                ),
+                SizedBox(
+                  height: 35.0,
+                ),
+                Text(
+                  widget.doc["note_content"],
+                  style: AppStyle.mainContent,
+                  maxLines: null,
+                )
+              ],
             ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              widget.doc["creation_date"],
-              style: AppStyle.DateTitle,
-              textAlign: TextAlign.right,
-            ),
-            SizedBox(
-              height: 35.0,
-            ),
-            Text(
-              widget.doc["note_content"],
-              style: AppStyle.mainContent,
-              overflow: TextOverflow.ellipsis,
-            )
-          ],
-        ),
-      ),
+          )),
     );
   }
 }

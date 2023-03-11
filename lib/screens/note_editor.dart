@@ -35,34 +35,36 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _titleController,
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Note Title'),
-              style: AppStyle.mainTitle,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: Text(
-                Date,
-                style: AppStyle.DateTitle,
-                textAlign: TextAlign.right,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextField(
+                controller: _titleController,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Note Title'),
+                style: AppStyle.mainTitle,
               ),
-            ),
-            TextField(
-              controller: _mainController,
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Your Note...'),
-              style: AppStyle.mainContent,
-            ),
-          ],
+              SizedBox(
+                height: 10,
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Text(
+                  Date,
+                  style: AppStyle.DateTitle,
+                  textAlign: TextAlign.right,
+                ),
+              ),
+              TextField(
+                controller: _mainController,
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Your Note...'),
+                style: AppStyle.mainContent,
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
